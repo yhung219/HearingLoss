@@ -38,3 +38,4 @@ if __name__ == "__main__":
     while True:
         light.blink()
         time.sleep(0.7)
+
