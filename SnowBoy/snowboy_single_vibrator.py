@@ -18,13 +18,10 @@ def vibrate():
     hptc.set_library(1)
     hptc.set_mode(0x00)
 
-    hptc.set_waveform(0, 52)
+    hptc.set_waveform(0, 29)
     hptc.go()
     time.sleep(1)
     hptc.stop
-    hptc.set_waveform(0, 29)
-    hptc.go()
-    hptc.stop()
 
 def interrupt_callback():
     global interrupted
