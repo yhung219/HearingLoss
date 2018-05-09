@@ -21,6 +21,7 @@ def vibrate():
     hptc.set_waveform(0, 52)
     hptc.go()
     time.sleep(1)
+    hptc.stop
     hptc.set_waveform(0, 29)
     hptc.go()
     hptc.stop()
