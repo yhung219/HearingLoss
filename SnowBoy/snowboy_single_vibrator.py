@@ -19,7 +19,9 @@ def vibrate():
     hptc.set_mode(0x00)
 
     hptc.set_waveform(0,14)
+    time.sleep(.5)
     hptc.set_waveform(0, 64)
+    time.sleep(.5)
     hptc.set_waveform(1,0)
     hptc.go()
     time.sleep(1)
