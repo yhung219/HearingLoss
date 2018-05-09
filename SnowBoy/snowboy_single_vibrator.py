@@ -18,11 +18,12 @@ def vibrate():
     hptc.set_library(1)
     hptc.set_mode(0x00)
 
-    hptc.set_waveform(14)
-    hptc.set_waveform(88, 1)
-    hptc.set_waveform(0, 2)
+    hptc.set_waveform(0,14)
+    hptc.set_waveform(0, 64)
+    hptc.set_waveform(1,0)
     hptc.go()
     hptc.stop
+
 
 
 def interrupt_callback():
