@@ -20,7 +20,9 @@ def vibrate():
 
     hptc.set_waveform(0, 52)
     hptc.go()
-    time.sleep(0.5)
+    time.sleep(.2)
+    hptc.set_waveform(0, 29)
+    hptc.go()
     hptc.stop()
 
 def interrupt_callback():
