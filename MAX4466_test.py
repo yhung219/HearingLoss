@@ -24,7 +24,7 @@ def getAdc(channel):
     # check for valid channel
     if channel > 7 or channel < 0:
         return -1
-        print('channel=' + channel)
+        print("wrong channel")
 
     # Preform SPI transaction and store returned bits in 'r'
     r = spi.xfer([1, (8 + channel) << 4, 0])
@@ -35,13 +35,13 @@ def getAdc(channel):
     print(adcOut)
 
     # If adcOut is greater than 700 send a text via email through terminal
-    if (adcOut > 400):
-        led.on()
-        sleep(.5)
-        led.off()
-        sleep(.5)
-        print('heard')
+    # if (adcOut > 400):
+    #     led.on()
+    #     sleep(.5)
+    #     led.off()
+    #     sleep(.5)
+    #     print('heard')
 
 while True:
-    getAdc(0)
+   getAdc(0)
 
