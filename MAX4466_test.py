@@ -9,7 +9,7 @@ from light import Light
 # Establish SPI device on Bus 0, Device 0
 spi = spidev.SpiDev()
 spi.open(0, 0)
-import light from Light
+
 
 def getAdc(channel):
     # check for valid channel
