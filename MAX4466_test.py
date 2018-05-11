@@ -44,5 +44,5 @@ def getAdc(channel):
 
 while True:
    getAdc(0)
-   sleep(.5)
+   sleep(.1)
 
