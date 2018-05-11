@@ -30,6 +30,7 @@ def getAdc(channel):
         sleep(.5)
         led.off()
         sleep(.5)
+        print ("heard")
 
 while True:
     getAdc(0)
