@@ -4,7 +4,7 @@ from time import sleep
 led = LED(16)
 
 while True:
-    led.on(1)
+    led.on()
     sleep(1)
-    led.off(1)
+    led.off()
     sleep(1)
