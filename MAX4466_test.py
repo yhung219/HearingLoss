@@ -24,7 +24,7 @@ def getAdc(channel):
     # check for valid channel
     if channel > 7 or channel < 0:
         return -1
-        print(channel)
+        print('channel=' channel)
 
     # Preform SPI transaction and store returned bits in 'r'
     r = spi.xfer([1, (8 + channel) << 4, 0])
