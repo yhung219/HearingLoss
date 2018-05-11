@@ -5,7 +5,7 @@
 
 import spidev
 from gpiozero import LED
-import time
+from time import sleep
 
 # Establish SPI device on Bus 0, Device 0
 spi = spidev.SpiDev()
@@ -30,7 +30,7 @@ def getAdc(channel):
         sleep(.5)
         led.off()
         sleep(.5)
-        print ("heard")
+        print("heard")
 
 while True:
     getAdc(0)
