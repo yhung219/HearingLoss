@@ -25,7 +25,7 @@ def getAdc(channel):
     adcOut = ((r[1] & 3) << 8) + r[2]
 
     # If adcOut is greater than 700 send a text via email through terminal
-    if (adcOut > 700):
+    if (adcOut > 200):
         led.on()
         sleep(.5)
         led.off()
