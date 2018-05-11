@@ -6,18 +6,22 @@
 from time import sleep
 import spidev
 from gpiozero import LED
-import os
 
 # Establish SPI device on Bus 0, Device 0
 spi = spidev.SpiDev()
 spi.open(0, 0)
 
+# LED pin
 led = LED(16)
 
-print ('running...')
+#Define Variables
+delay = 0.5
+channel = 0
+
+
 def getAdc(channel):
     # check for valid channel
-    if ((channel > 7) or (channel < 0)):
+    if channel > 7 or channel < 0:
         return -1
 
     # Preform SPI transaction and store returned bits in 'r'
@@ -25,15 +29,16 @@ def getAdc(channel):
 
     # Filter data bits from returned bits
     adcOut = ((r[1] & 3) << 8) + r[2]
-    print (adcOut)
+    print(adcOut)
 
     # If adcOut is greater than 700 send a text via email through terminal
-    if (adcOut > -1):
+    if (adcOut > 400):
         led.on()
-        sleep(1)
+        sleep(.5)
         led.off()
-        sleep(1)
+        sleep(.5)
         print('heard')
 
 while True:
     getAdc(0)
+
