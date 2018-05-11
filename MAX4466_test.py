@@ -17,16 +17,17 @@ led = LED(16)
 
 #Define Variables
 delay = 0.5
-channel = MCP3008(channel=0)
+chan = MCP3008(channel=0)
 
 
-def getAdc(channel):
+def getAdc(chan):
     # check for valid channel
-    if channel > 7 or channel < 0:
+    if chan > 7 or chan < 0:
         return -1
+        print(chan)
 
     # Preform SPI transaction and store returned bits in 'r'
-    r = spi.xfer([1, (8 + channel) << 4, 0])
+    r = spi.xfer([1, (8 + chan) << 4, 0])
     print (r)
 
     # Filter data bits from returned bits
