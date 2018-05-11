@@ -6,6 +6,7 @@
 from time import sleep
 import spidev
 from gpiozero import LED
+from gpiozero import MCP3008
 
 # Establish SPI device on Bus 0, Device 0
 spi = spidev.SpiDev()
@@ -16,7 +17,7 @@ led = LED(16)
 
 #Define Variables
 delay = 0.5
-channel = 0
+channel = MCP3008(channel=0)
 
 
 def getAdc(channel):
