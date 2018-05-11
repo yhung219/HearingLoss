@@ -24,7 +24,7 @@ def getAdc(channel):
 
     # If adcOut is greater than 700 send a text via email through terminal
     if (adcOut > 700):
-        Light.blink(16)
+        led.blink(16)
 
 
 while True:
