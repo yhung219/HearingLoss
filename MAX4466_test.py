@@ -14,6 +14,7 @@ spi.open(0, 0)
 
 led = LED(16)
 
+print ('running...')
 def getAdc(channel):
     # check for valid channel
     if ((channel > 7) or (channel < 0)):
