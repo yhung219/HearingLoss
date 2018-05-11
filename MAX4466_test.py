@@ -4,7 +4,7 @@
 # Import our SpiDe wrapper and out sleep function
 
 import spidev
-import RPi.GPIO as GPIO
+from gpiozero import LED
 import time
 
 # Establish SPI device on Bus 0, Device 0
