@@ -4,12 +4,14 @@
 # Import our SpiDe wrapper and out sleep function
 
 import spidev
-from light import Light
+from gpiozero import LED
+from time import sleep
 
 # Establish SPI device on Bus 0, Device 0
 spi = spidev.SpiDev()
 spi.open(0, 0)
 
+led = LED(16)
 
 def getAdc(channel):
     # check for valid channel
@@ -24,8 +26,10 @@ def getAdc(channel):
 
     # If adcOut is greater than 700 send a text via email through terminal
     if (adcOut > 700):
-        led.blink(16)
-
+        led.on()
+        sleep(.5)
+        led.off()
+        sleep(.5)
 
 while True:
     getAdc(0)
