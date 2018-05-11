@@ -25,7 +25,7 @@ signal.signal(signal.SIGINT, signal_handler)
 detector = snowboydecoder.HotwordDetector(model, sensitivity=0.5)
 print('Listening... Press Ctrl+C to exit')
 
-led = Light(21)
+led = Light(16)
 detector.start(detected_callback=led.blink,
                interrupt_check=interrupt_callback,
                sleep_time=0.03)
